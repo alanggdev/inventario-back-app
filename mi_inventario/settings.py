@@ -25,12 +25,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv("SECRET_KEY")
+SECRET_KEY = os.getenv("SECRET_KEYDJ")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv("DEBUG")
+DEBUG = os.getenv("DEBUGDJ")
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.ngrok.io', '3.138.119.212']
 
 CORS_ALLOWED_ORIGINS = []
 
@@ -75,8 +75,9 @@ REST_FRAMEWORK = {
 
 REST_AUTH = {
     'USE_JWT': True,
-    'JWT_AUTH_COOKIE': 'my-inv-auth',
-    'JWT_AUTH_REFRESH_COOKIE': 'my-inv-refresh-token',
+    'JWT_AUTH_COOKIE': 'my-app-auth',
+    'JWT_AUTH_REFRESH_COOKIE': 'my-refresh-token',
+    'JWT_AUTH_HTTPONLY': False
 }
 
 SIMPLE_JWT = {
@@ -121,12 +122,12 @@ WSGI_APPLICATION = 'mi_inventario.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': os.getenv("ENGINE"),
-        'NAME': os.getenv("NAME"),
-        'USER': os.getenv("USER"),
-        'PASSWORD': os.getenv("PASSWORD"),
-        'HOST': os.getenv("HOST"),
-        'PORT': os.getenv("PORT")
+        'ENGINE': os.getenv("ENGINEDB"),
+        'NAME': os.getenv("NAMEDB"),
+        'USER': os.getenv("USERDB"),
+        'PASSWORD': os.getenv("PASSWORDDB"),
+        'HOST': os.getenv("HOSTDB"),
+        'PORT': os.getenv("PORTDB")
     }
 }
 
