@@ -92,3 +92,11 @@ class GetUser(APIView):
             return Response(custom_response("Success", user, status=status.HTTP_200_OK))
         except ObjectDoesNotExist:
             return Response(custom_response("Error", "Not found", status=status.HTTP_404_NOT_FOUND))
+        
+class GetUsername(APIView):
+    def get(self, request, id, format=None):
+        try:
+            user = User.objects.get(id=id).username
+            return Response(custom_response("Success", user, status=status.HTTP_200_OK))
+        except ObjectDoesNotExist:
+            return Response(custom_response("Error", "Not found", status=status.HTTP_404_NOT_FOUND))

@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import InventoryCreateView, InventoryListView, InventoryDetailView, InventoryPerOwner, InventoryPerAdmin, InventoryPerSeller, GetUser
+from .views import InventoryCreateView, InventoryListView, InventoryDetailView, InventoryPerOwner, InventoryPerAdmin, InventoryPerSeller, GetUser, GetUsername
 
 urlpatterns = [
     path('create/', InventoryCreateView.as_view()),
@@ -9,4 +9,5 @@ urlpatterns = [
     path('admin/<int:id_admin>', InventoryPerAdmin.as_view()),
     path('seller/<int:id_seller>', InventoryPerSeller.as_view()),
     path('user/<str:username>', GetUser.as_view()),
+    path('username/<int:id>', GetUsername.as_view()),
 ]
