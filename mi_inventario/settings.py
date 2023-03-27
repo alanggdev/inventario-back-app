@@ -30,7 +30,7 @@ SECRET_KEY = os.getenv("SECRET_KEYDJ")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUGDJ")
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.ngrok.io', '3.138.119.212']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '3.22.66.38']
 
 CORS_ALLOWED_ORIGINS = []
 
